@@ -5,9 +5,10 @@ const app = express();
 
 const port = 3000;
 
-app.set('view engine', 'pug');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.set('view engine', 'pug');
 let movies = [
     { id: '1588323375416', title: 'Star Wars: Episode IX - The Rise of Skywalker', year: 2019, director: 'J.J. Abrams' },
     { id: '1588323390624', title: 'The Irishman', year: 2019, director: 'Martin Scorsese' },
@@ -18,7 +19,7 @@ app.get("/hello", (req, res) => {
     res.render("hello", { name: 'John', lastname: 'Johnson' });
 })
 
-app.get("/movies", (req, res) => {
+app.get("/", (req, res) => {
     res.render("movielist", { movies: movies });
 })
 
@@ -33,6 +34,6 @@ app.post("/addmovie", (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on port ${port}`)
 })
