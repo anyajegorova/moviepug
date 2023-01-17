@@ -8,16 +8,16 @@ html
       h1 New movie
       form(action='/addmovie', method='POST')
         div
-          input(type="text", name="title", placeholder="Title").form-control
+          input(type="text", name="title", placeholder="Title").form-control.m-3
         div
-          input(type="text", name="director", placeholder="Director").form-control
+          input(type="text", name="director", placeholder="Director").form-control.m-3
         div
-          input(type="number", name="year", placeholder="Year").form-control
+          input(type="number", name="year", placeholder="Year").form-control.m-3
         div
           div.container
-            input(type="submit", value="Add").btn.btn-primary
+            input(type="submit", value="Add").btn.btn-primary.m-2
             |
             |
-            a.btn(href='/').btn.btn-primary Back
+            a.btn(href='/').btn.btn-primary.m-2 Back
 
         
